@@ -1,17 +1,17 @@
 #film name, category, and language
 
 select
-  film.title as film_title,
-  category.name as category_name,
-  language.name as language_name
+  f.title as film_title,
+  c.name as category_name,
+  l.name as language_name
 from
-  film,
-  film_category,
-  category,
-  language
+  film f,
+  film_category fc,
+  category c,
+  language l
 where
-  film.film_id = film_category.film_id
+  f.film_id = fc.film_id
   and
-  category.category_id = film_category.category_id
+  c.category_id = fc.category_id
   and
-  language.language_id = film.language_id;
+  l.language_id = f.language_id;
